@@ -1,0 +1,33 @@
+.form {
+  margin-top: 21.44px;
+  .field {
+    input {
+      padding: 0;
+      margin: 0;
+      height: 35px;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 5px;
+      font-size: 15px;
+      font-weight: 500;
+      border-color: rgba(144, 233, 248, 0.589);
+      border-radius: 5px;
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
+}
+.blue.button {
+  height: 35px;
+  line-height: 1;
+  padding: 0 20px;
+  background: rgb(40, 140, 221);
+  color: white;
+  border: 1px rgb(40, 140, 221) solid;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 15px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border-style: outset;
+}

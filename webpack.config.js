@@ -11,22 +11,23 @@ module.exports = {
   module: {
     rules: [
       {
-        // test: /\.js$/,
+        // test: /\.(js|jsx)$/,
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader", // babel的loader，jsx文件使用babel-loader处理
           options: { presets: ["react", "env", "stage-0"] },
         },
-        // loader: "babel-loader",
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         exclude: /node_modules/,
         use: [
-          // css和styleloader，对css后缀的文件进行处理
+          // css-loader和style-loader，对css后缀的文件进行处理
+          // style-loader必须在css-loader前面
           { loader: "style-loader" },
           { loader: "css-loader" },
+          { loader: "sass-loader" },
         ],
       },
     ],

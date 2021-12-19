@@ -1,5 +1,7 @@
 import React from "react";
-
+import AppForm from "./AppForm.js";
+import AppList from "./AppList.js";
+import "../../css/semantic.scss";
 class App extends React.Component {
   state = {
     choosevalue: 1,
@@ -10,7 +12,11 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <div className="ui comments">
-        <h1>恭喜你 运行成功！</h1>
+        <h1>My Todo with React</h1>
+        <hr />
+        <div className="ui divider"></div>
+        <AppForm />
+        <AppList data={data} />
       </div>
     );
   }
