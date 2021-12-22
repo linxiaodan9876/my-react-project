@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "uuid";
 
 var styles = {
   title: {
@@ -11,16 +10,44 @@ var styles = {
 };
 
 class AppForm extends React.Component {
+  addRecord() {
+    if (this.input.value == "" || this.input.value.match(/^\s+$/)) {
+      // todo内容为空，不添加。后续把提示给加上
+      return;
+    }
+    const data = this.props.data;
+    // 把新建item传给父组件，让它加上
+    this.props.add({
+      id: data.length,
+      text: this.input.value,
+      complete: false,
+      isDelete: false,
+    });
+  }
+  // 箭头函数可以让this继承AppForm的
+  // addRecord = () => {
+  //   console.log(this);
+  // };
   render() {
     return (
-      <form className="ui reply form">
+      <div className="ui reply form">
         <div className="field" style={styles.title}>
-          <input type="text" placeholder="TODO" ref="text" />
+          <input
+            type="text"
+            placeholder="TODO"
+            ref={(input) => {
+              this.input = input;
+            }}
+          />
         </div>
-        <button type="submit" className="ui blue button">
+        <button
+          onClick={this.addRecord.bind(this)}
+          // onClick={this.addRecord}  // 这种写法对应箭头函数
+          className="ui blue button"
+        >
           添加
         </button>
-      </form>
+      </div>
     );
   }
 }
