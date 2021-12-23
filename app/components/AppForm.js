@@ -30,7 +30,7 @@ class AppForm extends React.Component {
   // };
   render() {
     return (
-      <div className="ui reply form">
+      <form className="ui reply form">
         <div className="field" style={styles.title}>
           <input
             type="text"
@@ -44,10 +44,11 @@ class AppForm extends React.Component {
           onClick={this.addRecord.bind(this)}
           // onClick={this.addRecord}  // 这种写法对应箭头函数
           className="ui blue button"
+          type="button"
         >
           添加
         </button>
-      </div>
+      </form>
     );
   }
 }
