@@ -16,6 +16,10 @@ class App extends React.Component {
     this.state.data.push(item);
     this.setState({ data: this.state.data });
   };
+  deleteItem = (id) => {
+    this.state.data[id].isDelete = true;
+    this.setState({ data: this.state.data });
+  };
   render() {
     const { data } = this.state;
     return (
@@ -24,7 +28,7 @@ class App extends React.Component {
         <hr />
         <div className="ui divider"></div>
         <AppForm data={data} add={this.add} />
-        <AppList data={data} />
+        <AppList data={data} deleteItem={this.deleteItem} />
       </div>
     );
   }

@@ -12,8 +12,10 @@ var styles = {
     marginRight: "50px",
   },
 };
-
 class AppTodos extends React.Component {
+  deleteList = () => {
+    this.props.deleteItem();
+  };
   render() {
     return (
       <div className="comment">
@@ -27,8 +29,12 @@ class AppTodos extends React.Component {
           <span className="author" style={styles.title}>
             {this.props.complete ? "已完成" : "未完成"}
           </span>
-          <span className="author">{this.props.id}</span>
-          <button className="ui blue button" style={styles.delete}>
+          {/* <span className="author">{this.props.id}</span> */}
+          <button
+            className="ui blue button"
+            style={styles.delete}
+            onClick={this.deleteList}
+          >
             删除
           </button>
         </div>
