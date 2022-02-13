@@ -12,10 +12,21 @@
         padding: 0;
         margin: 2em 0 0;
       }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      #__main {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
     </style>
   </head>
   <body>
-    <div class="ui container" style="padding: 30px">
+    <div id="__main" class="ui container main" style="padding: 30px">
       <div id="app"></div>
     </div>
   </body>
